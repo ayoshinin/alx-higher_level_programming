@@ -1,47 +1,25 @@
 
 #!/usr/bin/node
-/**
- * Class Rectangle - that defines a rectangle
- */
-class Rectangle {
-  /**
-   * Class Contructor Function - Creates a new Rectangle with the given dimensions
-   * @param {Number} w The value of the width.
-   * @param {Number} h The value of the height.
-   */
+module.exports = class Rectangle {
   constructor (w, h) {
-    if (w > 0 || h > 0) {
+    if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
     }
   }
 
-  /**
-   * print () - prints the rectangle
-   */
-
   print () {
-    for (let i = 0; i < this.height; i++) {
-      let rect = '';
-      for (let j = 0; j < this.width; j++) rect += 'X';
-      console.log(rect);
+    for (let j = 0; j < this.height; j++) {
+      console.log(('X'.repeat(this.width)));
     }
   }
 
-  /**
-   * double() - doubles the value of the rectangle
-   */
-  double () {
-    this.width *= 2;
-    this.height *= 2;
-  }
-
-  /**
-   * rotate() - rotates the value of the rectangle
-   */
   rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
-}
-module.exports = Rectangle;
+
+  double () {
+    [this.width, this.height] = [this.width * 2, this.height * 2];
+  }
+};
 
