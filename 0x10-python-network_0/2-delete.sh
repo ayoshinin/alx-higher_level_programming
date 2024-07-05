@@ -1,5 +1,5 @@
 
 #!/bin/bash
-# Deletes content at a URL. Provide the URL as the first argument.
-curl -s "$1" -X DELETE
+# A Bash script that sends a DELETE request to a URL passed as the first
+curl -s -X DELETE "$1"
 
