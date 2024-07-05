@@ -1,5 +1,5 @@
 
 #!/bin/bash
-# Discover allowed actions for a URL. Enter the URL as the first argument.
-curl -sI -X OPTIONS "$1" | grep "Allow:" | cut -d " " -f 2-
+# Write a Bash script that takes in a URL methods accepted by the server
+curl -siLk -X OPTIONS "$1" | grep -oiE 'Allow: .+' | cut -d ' ' -f2-
 
