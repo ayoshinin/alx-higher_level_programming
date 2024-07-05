@@ -1,5 +1,3 @@
-
 #!/bin/bash
-# This script fetches a URL (provided as argument), silently retrieves header info, isolates the Content-Length value, and displays it.
-curl -sI "$1" | grep "Content-Length:" | cut -d " " -f 2
-
+# A script that takes in url,sends request to that url and display the size
+curl -sI "$1" | grep -oiE 'Content-Length: [0-9]+' | cut -d ' ' -f2
