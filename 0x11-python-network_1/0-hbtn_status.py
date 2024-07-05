@@ -1,16 +1,16 @@
-
 #!/usr/bin/python3
-'''
-Write a Python script that fetches https://alx-intranet.hbtn.io/status and must use the package urllib
-'''
-import urllib.request as reqobj
+"""A script that
+- fetches https://alx-intranet.hbtn.io/status.
+- uses urlib package
+"""
 
 
-if __name__ == "__main__":
-    with reqobj.urlopen('https://alx-intranet.hbtn.io/status/') as response:
-        the_page = response.read()
+if __name__ == '__main__':
+    import urllib.request
+
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
+        content = res.read()
         print("Body response:")
-        print("\t- type: {}".format(type(the_page)))
-        print("\t- content: {}".format(the_page))
-        print("\t- utf8 content: {}".format(the_page.decode("utf-8")))
-
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
